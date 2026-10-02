@@ -3,17 +3,14 @@
 **An agent that audits an AI coding agent's harness against the repo it governs, and reports the
 drift with evidence.**
 
-Paste a repo path, a GitHub/GitLab URL, or drop a zip. Luthier enumerates the harness — `CLAUDE.md`,
-`AGENTS.md`, `.cursorrules`, `.hermes/skills/**`, MCP config files, README conventions — builds a
-**rule inventory**, verifies every rule against what is actually on disk, and returns a **drift
-scorecard**: each stale path, unused skill, dead MCP server and violated convention, with the
-rule text at `file:line`, the contradicting reality, and a ready-to-apply unified diff.
+Paste a repo path, a GitHub/GitLab URL, or drop a zip. Luthier enumerates the harness — `CLAUDE.md`, `AGENTS.md`, `.cursorrules`, `.hermes/skills/**`, MCP config files, README conventions — builds a **rule inventory**, verifies every rule against what is actually on disk, and returns a **drift scorecard**: each stale path, unused skill, dead MCP server and violated convention, with the rule text at `file:line`, the contradicting reality, and a ready-to-apply unified diff.
 
-> In 2026 the harness is where agent cost and failures hide. Every team now checks its code into
-> review, CI and the test suite — and nobody checks whether the rules the agent is handed still
-> match reality. A `CLAUDE.md` that says `npm run lint:fix` when the script was renamed three
-> months ago does not fail loudly. It burns tokens, produces wrong answers, and teaches the agent
-> to distrust its own instructions. Luthier is the missing check.
+> In 2026 the harness is where agent cost and failures hide. Every team now checks its code into review, CI and the test suite — and nobody checks whether the rules the agent is handed still match reality. A `CLAUDE.md` that says `npm run lint:fix` when the script was renamed three months ago does not fail loudly. It burns tokens, produces wrong answers, and teaches the agent to distrust its own instructions. Luthier is the missing check.
+
+<img width="1884" height="1530" alt="screencapture-127-0-0-1-5174-2026-10-02-23_26_05" src="https://github.com/user-attachments/assets/638bec01-76b3-4423-9e07-0fef34e8a745" />
+
+https://github.com/user-attachments/assets/ccc7ee62-a918-4b03-93cc-75ad4dd0e56b
+
 
 ---
 
