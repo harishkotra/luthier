@@ -1,0 +1,7 @@
+strands-agents>=1.57
+strands-agents-tools>=0.8
+fastapi>=0.142
+uvicorn[standard]>=0.54
+openai>=2.0
+httpx>=0.28
+python-multipart>=0.0.20

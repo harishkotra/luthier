@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    @apply bg-void text-varnish font-mono antialiased;
+    /* Bench lamp over a dark walnut top plate. */
+    background-image: radial-gradient(
+        1200px 600px at 12% -10%,
+        rgba(200, 150, 62, 0.09),
+        transparent 60%
+      ),
+      linear-gradient(180deg, #100e0c 0%, #0b0a09 40%, #090807 100%);
+    background-attachment: fixed;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-display tracking-tight;
+  }
+
+  ::selection {
+    @apply bg-brass/30 text-varnish;
+  }
+
+  /* Thin, unobtrusive scrollbars so long diffs stay readable. */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #332e29 transparent;
+  }
+  *::-webkit-scrollbar {
+    width: 9px;
+    height: 9px;
+  }
+  *::-webkit-scrollbar-thumb {
+    background: #332e29;
+    border-radius: 6px;
+  }
+}
+
+@layer components {
+  .panel {
+    @apply border border-bench-700 bg-bench-900/80 shadow-inlay rounded-lg;
+  }
+
+  .panel-head {
+    @apply flex items-center justify-between gap-3 border-b border-bench-700 px-4 py-2.5;
+  }
+
+  .label {
+    @apply text-[10px] uppercase tracking-[0.18em] text-bench-500;
+  }
+
+  .path {
+    @apply font-mono text-[12.5px] text-rosin;
+  }
+
+  .field {
+    @apply w-full rounded border border-bench-600 bg-void/70 px-2.5 py-1.5 text-[13px]
+      text-varnish outline-none placeholder:text-bench-500 focus:border-brass/70;
+  }
+
+  .btn {
+    @apply inline-flex items-center gap-1.5 rounded border border-bench-600 bg-bench-800
+      px-3 py-1.5 text-[12.5px] text-varnish transition-colors
+      hover:border-brass/60 hover:text-brass disabled:cursor-not-allowed disabled:opacity-40;
+  }
+
+  .btn-primary {
+    @apply border-brass/70 bg-brass/15 text-brass hover:bg-brass/25 hover:text-varnish;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1 rounded-full border px-2 py-[1px] text-[10.5px]
+      uppercase tracking-wider;
+  }
+}
+
+@layer utilities {
+  .grain::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.025;
+    background-image: repeating-linear-gradient(
+      130deg,
+      #fff 0 1px,
+      transparent 1px 3px
+    );
+  }
+}

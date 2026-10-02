@@ -1,0 +1,15 @@
+{
+  "name": "luthier",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Audit an AI coding agent's harness against the repo it governs and report drift with evidence.",
+  "scripts": {
+    "setup": "python3 -m venv .venv && .venv/bin/pip install -q --upgrade pip && .venv/bin/pip install -q -r requirements.txt && npm --prefix client install",
+    "dev": "bash scripts/dev.sh",
+    "dev:server": "export PATH=\"$PWD/.venv/bin:$PATH\"; python -m uvicorn agent.main:app --host 127.0.0.1 --port ${PORT:-3001} --reload",
+    "dev:client": "npm --prefix client run dev",
+    "build": "npm --prefix client run build",
+    "verify": "export PATH=\"$PWD/.venv/bin:$PATH\"; python -m agent.verify"
+  }
+}
